@@ -13,7 +13,7 @@ public class BulletCtrl : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-        GetComponent<Rigidbody>().AddRelativeForce(transform.forward * speed);
+        GetComponent<Rigidbody>().AddForce(transform.forward * speed);
 	}
 	
 	// Update is called once per frame
