@@ -865,11 +865,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 114730386552761450, guid: 7d3d77cc8ef31834cb712f0142dd0eab,
-        type: 2}
-      propertyPath: speed
-      value: 1000
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d3d77cc8ef31834cb712f0142dd0eab, type: 2}
   m_IsPrefabAsset: 0
@@ -1157,7 +1152,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2023226081}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 100
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -1175,8 +1170,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 0.8}
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Size: {x: 1.5, y: 1, z: 1.5}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &2023226087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1190,3 +1185,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 1919682689444122, guid: 7d3d77cc8ef31834cb712f0142dd0eab, type: 2}
   firePos: {fileID: 1630596523}
+--- !u!65 &2023226089
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2023226081}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 1.5, z: 0}
