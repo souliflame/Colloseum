@@ -27,8 +27,9 @@ public class RemoveBullet : MonoBehaviour {
         //법선 벡터가 이루는 회전각도를 추출
         Quaternion rot = Quaternion.FromToRotation(-Vector3.forward, contact.normal);
         //스파크 효과를 생성
-        Instantiate(sparkEffect, contact.point, rot);
-
+        GameObject spark = Instantiate(sparkEffect, contact.point + (-contact.normal * 0.05f), rot);
+        //스파크 효과의 부모를 드럼통 또는 벽으로 설정(맞는쪽)
+        spark.transform.SetParent(this.transform);
 
     }
 }
