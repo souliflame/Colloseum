@@ -3,7 +3,8 @@ guid: 13b6ee11c812d1c43b0ea8ef11117c78
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - sparkEffect: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
