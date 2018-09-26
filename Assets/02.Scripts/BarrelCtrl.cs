@@ -19,8 +19,14 @@ public class BarrelCtrl : MonoBehaviour {
     //MeshRender 컴포넌트를 저장할 변수
     private MeshRenderer _renderer;
 
+    //AudioSource 컴포넌트를 저장할 변수
+    private AudioSource _audio;
+
     //폭발반경
     public float expRadius = 10.0f;
+
+    //폭발음 오디오 클립
+    public AudioClip expSfx;
 
 	// Use this for initialization
 	void Start () {
@@ -31,8 +37,14 @@ public class BarrelCtrl : MonoBehaviour {
 
         //MeshRenderer 컴포넌트를 추출해 저장
         _renderer = GetComponent<MeshRenderer>();
+
+        //AudioSource 컴포넌트를 추출해 저장
+        _audio = GetComponent<AudioSource>();
+
+
         //난수를 발생시켜 불규칙적인 텍스처를 적용
         _renderer.material.mainTexture = textures[Random.Range(0, textures.Length)];
+        
 	}
 
     private void OnCollisionEnter(Collision coll)
@@ -70,6 +82,9 @@ public class BarrelCtrl : MonoBehaviour {
         meshFilter.sharedMesh = meshes[idx];
         //메쉬콜리더 추출 및 바로 찌그러진 메쉬콜리더 적용
         GetComponent<MeshCollider>().sharedMesh = meshes[idx];
+
+        //폭발음 발생
+        _audio.PlayOneShot(expSfx, 1.0f);
     }
 
     void IndirectDamage(Vector3 pos)
